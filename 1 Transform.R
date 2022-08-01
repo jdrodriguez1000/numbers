@@ -17,11 +17,6 @@ resultB_transf <- resultB_transf %>%
          superbal = "NRO 6")
 
 
-# Se debe actualizar la fecha maxima desviada
-resultB_transf <- resultB_transf %>% 
-  mutate(fnumerica = ifelse(fnumerica == 46727, 43075, fnumerica))
-
-
 # Agregar la columna fecha al archivo
 resultB_transf <- resultB_transf %>% 
   mutate(fecha = as.Date(fnumerica, origin = "1899-12-30"))
