@@ -30,6 +30,10 @@ resultB_transf <- resultB_transf %>%
 resultB_transf <- resultB_transf %>% 
   mutate(diasem = wday(fecha, label = TRUE))
 
+# Adicionar la columna rango
+resultB_transf <- resultB_transf %>% 
+  mutate(rango = number5 - number1)
+
 ##  ----- Analisis de la variable fecha ---------
 
 # Número de registros informados en la variable fecha
@@ -73,6 +77,7 @@ resultB_transf %>%
 resultB_transf %>% 
   group_by(number1) %>% 
   summarise(total = sum(!is.na(number1))) %>% 
+  arrange(desc(total)) %>% 
   View()
 
 
@@ -93,6 +98,7 @@ resultB_transf %>%
 resultB_transf %>% 
   group_by(number2) %>% 
   summarise(total = sum(!is.na(number2))) %>% 
+  arrange(desc(total)) %>% 
   View()
 
 
@@ -113,6 +119,7 @@ resultB_transf %>%
 resultB_transf %>% 
   group_by(number3) %>% 
   summarise(total = sum(!is.na(number3))) %>% 
+  arrange(desc(total)) %>% 
   View()
 
 # ------ ANALISIS INICIAL DE LA VARIABLE NUMBER 4 ------
@@ -132,6 +139,7 @@ resultB_transf %>%
 resultB_transf %>% 
   group_by(number4) %>% 
   summarise(total = sum(!is.na(number4))) %>% 
+  arrange(desc(total)) %>% 
   View()
 
 # ------ ANALISIS INICIAL DE LA VARIABLE NUMBER 5 ------
@@ -151,6 +159,7 @@ resultB_transf %>%
 resultB_transf %>% 
   group_by(number5) %>% 
   summarise(total = sum(!is.na(number5))) %>% 
+  arrange(desc(total)) %>% 
   View()
 
 
@@ -171,6 +180,7 @@ resultB_transf %>%
 resultB_transf %>% 
   group_by(superbal) %>% 
   summarise(total = sum(!is.na(superbal))) %>% 
+  arrange(desc(total)) %>% 
   View()
 
 
