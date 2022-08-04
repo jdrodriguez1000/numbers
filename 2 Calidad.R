@@ -12,9 +12,9 @@ library(lubridate)
 glimpse(set_datos_original)
 
 # RESULTADOS: 
-#     Filas 264.
+#     Filas 312.
 #     Columnas 7
-#     Fecha de carga original 4-agosto-2022
+#     Fecha de carga: 4-agosto-2022
 
 
 
