@@ -37,6 +37,7 @@ dtf_datos <- dtf_datos %>%
 dtf_datos <- dtf_datos %>% 
   select(fecha, diasem, nmb1, nmb2, nmb3, nmb4, nmb5, superb)
 
+
 # Adicion columna repetidos (la superb es igual a algun numero)
 dtf_datos <-  dtf_datos %>%
   mutate(repetidos = ifelse((superb == nmb1 | superb == nmb2 | superb == nmb3 | superb == nmb4 | superb == nmb5), "SI", "NO")) 
